@@ -1,3 +1,4 @@
+//OK
 const usuarioModel = require('../models/usuarioModel');
 const emprestimoModel = require('../models/emprestimoModel');
 
@@ -22,7 +23,7 @@ class UsuarioController{
     }
 
     async listar(req, res){
-        const resultado = await usuarioModel.find({});
+        const resultado = await usuarioModel.find({}, {_id:0, __v:0});
         res.json(resultado);
     }
 

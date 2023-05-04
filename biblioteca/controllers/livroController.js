@@ -1,3 +1,4 @@
+//OK
 const livroModel = require('../models/livroModel');
 const autorModel = require('../models/autorModel');
 const editoraModel = require('../models/editoraModel');
@@ -21,12 +22,16 @@ class LivroController{
 
     async buscarPorCodigo(req, res){
         const codigo = req.params.codigo;
-        const resultado = await livroModel.findOne({'codigo': codigo});
+        const resultado = await livroModel.findOne({'codigo': codigo})
+        .populate('autor', {_id:0, __v:0})
+        .populate('editora', {_id:0, __v:0});
         res.json(resultado);
     }
 
     async listar(req, res){
-        const resultado = await livroModel.find({});
+        const resultado = await livroModel.find({}, {_id:0, __v:0})
+        .populate('autor', {_id:0, __v:0})
+        .populate('editora', {_id:0, __v:0});
         res.json(resultado);
     }
 

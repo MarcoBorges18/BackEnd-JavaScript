@@ -1,3 +1,4 @@
+//Verificar Datas
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -14,12 +15,12 @@ const EmprestimoSchema = new Schema({
         ref: 'livro',
         required: [true, "Selecione o livro que deseja emprestar"]
     },
-    dtaEmprestimo: {
+    dataEmprestimo: {
         type: Date,
         default: Date.now()
     },
-    dtaDevolucao: String,
-    dtaDevolucaoReal: String,
+    dataDevolucao: String,
+    dataDevolucaoReal: String,
 });
 
 module.exports = mongoose.model('emprestimo', EmprestimoSchema);

@@ -1,3 +1,4 @@
+//Verificar Datas
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -8,8 +9,8 @@ const AutorSchema = new Schema({
         type: String,
         required: [true, "Nome obrigatório!"]
     },
-    dtaNascimentoautor: String, 
-    nascionalidade: String,
+    dataNascimentoAutor: String, 
+    nacionalidade: String,
     biografia: String
 });
 

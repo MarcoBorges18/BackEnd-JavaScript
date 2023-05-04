@@ -1,3 +1,4 @@
+//OK
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -9,11 +10,16 @@ const EditoraSchema = new Schema({
         type: String,
         required: [true, "Nome obrigatório"]
     },
-    endereco: String,
-    telefone: Number,
+    endereco: {
+        type: String,
+        required: [true, "endereço obrigatório"]
+    },
+    telefone: {
+        type: String,
+        required: [true, "Telefone obrigatório"]
+    },
     email: String,
     site: String
-
 });
 
 module.exports = mongoose.model('editora', EditoraSchema);

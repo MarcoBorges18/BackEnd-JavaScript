@@ -1,3 +1,4 @@
+//Verificar Datas
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -18,13 +19,13 @@ const UsuarioSchema = new Schema({
             required:[true, "email é obrigatório!"]
     },
     telefone: {
-        type: Number,
+        type: String, 
             required:[true, "Numero de telefone é obrigatório!"]
     },
 
-    dtaNascimentoUsuario: String,
+    dataNascimentoUsuario: String,
 
-    dtaInscricao: {
+    dataInscricao: {
         type: Date,
             default: Date.now()
     }

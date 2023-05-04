@@ -1,3 +1,4 @@
+//OK
 const autorModel = require('../models/autorModel');
 
 class EditoraController{
@@ -18,7 +19,7 @@ class EditoraController{
     }
 
     async listar(req, res){
-        const resultado = await autorModel.find({});
+        const resultado = await autorModel.find({}, {_id:0, __v:0});
         res.json(resultado);
     }
 
